@@ -1,0 +1,36 @@
+{
+  "name": "verificanews",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "dev": "node --watch --env-file-if-exists=.env src/server.js",
+    "test": "node --test --test-concurrency=1",
+    "db:migrate": "node --env-file-if-exists=.env scripts/migrate.js",
+    "db:purge": "node --env-file-if-exists=.env scripts/purge.js",
+    "local": "node --env-file-if-exists=.env scripts/local.js"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "ipaddr.js": "^2.2.0",
+    "jsdom": "^26.1.0",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "sharp": "^0.35.5",
+    "tesseract.js": "^6.0.1",
+    "tldts": "^7.0.14",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.13",
+    "supertest": "^7.1.4"
+  }
+}
